@@ -18,7 +18,7 @@ It takes participant details from Participant_Details.csv file and outputs data 
 # Installation Instructions
 
 1. Make sure Python 3 and pip is installed
-2. Download the chromedriver according to your chrome version
+2. Download the chromedriver according to your chrome version and OS (Windows or Linux)
 3. Install the required libraries in your terminal using the following commands:
  
 `pip install selenium`
@@ -30,5 +30,6 @@ It takes participant details from Participant_Details.csv file and outputs data 
 4. Execute the script using the following command:
 
 `python3 badge_scraper.py`
+
  
 
