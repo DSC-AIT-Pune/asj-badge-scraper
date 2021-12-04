@@ -3,7 +3,20 @@ from selenium import webdriver
 import time
 import pandas as pd
 from selenium.webdriver.chrome.options import Options
+import pymongo
 
+myclient = pymongo.MongoClient("mongodb+srv://shekhar:Arduino123@cluster0.pr6l1.mongodb.net/asj?retryWrites=true&w=majority")
+mydb = myclient["asj"]
+
+mycol = mydb["users"]
+
+users= {"name":"shekhar","address":"Highway 37"}
+
+x = mycol.insert_one(users)
+
+print(x)
+
+'''
 def remove_tags(html):
     soup = BeautifulSoup(html, "html.parser")
     for data in soup(['style', 'script']):
@@ -90,3 +103,4 @@ dict = {'Name': name,'Email':email, 'Badges': badges, 'Kotlin Basics':kotlin_bas
 df = pd.DataFrame(dict)
 df.to_csv('Participant_Completion.csv')
 paragraphs=remove_tags(paragraphs)
+'''
