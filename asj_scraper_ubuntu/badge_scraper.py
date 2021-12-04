@@ -91,7 +91,7 @@ for v,w,z in zip(df1.url,df1.name,df1.email):
     completed_all.append(completed_all_s)
     paragraphs = paragraphs + "<br><br>"
     badges.append(badgelist)
-    dict = {'Name': name,'Email':email, 'Badges': badgelist, 'Kotlin Basics':kotlin_basics_s, 'Functions':funct_s, 'Classes and Objects':classes_objects_s, 'Build your first Android app':build_app_s, 'Layouts':layouts_s, 'App navigation':app_navigation_s, 'Score Out of 6':score_s,'Completed All Badges':completed_all_s}
+    dict = {'Name': w,'Email':z, 'Profile_URL':v, 'Badges': badgelist, 'Kotlin_Basics':kotlin_basics_s, 'Functions':funct_s, 'Classes_and_Objects':classes_objects_s, 'Build_your_first_Android_app':build_app_s, 'Layouts':layouts_s, 'App_navigation':app_navigation_s, 'Score_Out_of_6':score_s,'Completed_All_Badges':completed_all_s}
     x = mycol.insert_one(dict)
     print(x)
 
