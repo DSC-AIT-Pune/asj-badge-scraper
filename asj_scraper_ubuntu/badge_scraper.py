@@ -11,11 +11,6 @@ mydb = myclient["asj"]
 
 mycol = mydb["users"]
 
-users= {"name":"shekhar","address":"Highway 37"}
-
-
-
-
 def remove_tags(html):
     soup = BeautifulSoup(html, "html.parser")
     for data in soup(['style', 'script']):
@@ -96,10 +91,11 @@ for v,w,z in zip(df1.url,df1.name,df1.email):
     completed_all.append(completed_all_s)
     paragraphs = paragraphs + "<br><br>"
     badges.append(badgelist)
+    dict = {'Name': df1.name,'Email':df1.email, 'Badges': badgeslist, 'Kotlin Basics':kotlin_basics_s, 'Functions':funct_s, 'Classes and Objects':classes_objects_s, 'Build your first Android app':build_app_s, 'Layouts':layouts_s, 'App navigation':app_navigation_s, 'Score Out of 6':score_s,'Completed All Badges':completed_all_s}
+    x = mycol.insert_one(dict)
+    print(x)
 
 dict = {'Name': name,'Email':email, 'Badges': badges, 'Kotlin Basics':kotlin_basics, 'Functions':funct, 'Classes and Objects':classes_objects, 'Build your first Android app':build_app, 'Layouts':layouts, 'App navigation':app_navigation, 'Score Out of 6':score,'Completed All Badges':completed_all}
-x = mycol.insert_one(dict)
-print(x)
 df = pd.DataFrame(dict)
 df.to_csv('Participant_Completion.csv')
 paragraphs=remove_tags(paragraphs)
