@@ -49,7 +49,9 @@ for v,w,z in zip(df1.url,df1.name,df1.email):
     options = Options()
     options.headless = True
     wd = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-    wd.add_argument("--remote-debugging-port=9222")
+    chromeOptions = webdriver.ChromeOptions() 
+
+    chromeOptions.add_argument("--remote-debugging-port=9222")
     responce = wd.get(v)
     name.append(w)
     email.append(z)
